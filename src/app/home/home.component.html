@@ -1,0 +1,62 @@
+{{title}}
+<!-- <br> -->
+<div>Olá, hoje é dia {{currentDay | date}}</div>
+<!-- <ul>
+    <li>
+        {{'R$' + valor}}
+    </li>
+</ul>
+<ul>
+    <li>
+        {{'R$' + valor/3}}
+    </li>
+</ul> -->
+<div>
+    <p>{{valor + 25 | currency : "BRL"}}</p>
+</div>
+
+<ul>
+    <li>
+        <app-contact></app-contact>
+    </li>
+    <li>
+        <app-about></app-about>
+    </li>
+</ul>
+
+<button (click)="cadastrar()">Cadastre-se</button>
+
+<div *ngIf="isLogged">
+    <label for="">Email</label>
+    <input type="email">
+    <label for="">Password</label>
+    <input type="password" name="password" id="">
+</div>
+
+<div>
+    <label for="">Número 1: </label>
+    <input type="number" #num1>
+    <label for="">Número 2: </label>
+    <input type="number" #num2>
+</div>
+<div>
+    <button (click)="somar()">Somar</button>
+    <div *ngIf="soma !== null">
+        <p><strong>Seu saldo agora é: </strong>{{soma | currency : "BRL"}}</p>
+    </div>
+    <button (click)="subtrair()">Subtrair</button>
+    <div *ngIf="subtracao !== null">
+        <p><strong>Seu saldo agora é: </strong>{{subtracao | currency : "BRL"}}</p>
+    </div>
+    <button (click)="multiplicar()">Multiplicar</button>
+    <div *ngIf="multiplicacao !== null">
+        <p><strong>Seu saldo agora é: </strong>{{multiplicacao | currency : "BRL"}}</p>
+    </div>
+    <button (click)="dividir()">Dividir</button>
+    <div *ngIf="divisao !== null">
+        <p><strong>Seu saldo agora é: </strong>{{divisao | currency : "BRL"}}</p>
+    </div>
+</div>
+
+
+
