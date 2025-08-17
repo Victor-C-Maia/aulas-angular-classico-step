@@ -1,0 +1,105 @@
+{{title}}
+<!-- <br> -->
+<div>Olá, hoje é dia {{currentDay | date: "short"}}</div>
+<!-- <ul>
+    <li>
+        {{'R$' + valor}}
+    </li>
+</ul>
+<ul>
+    <li>
+        {{'R$' + valor/3}}
+    </li>
+</ul> -->
+<div>
+    <p>{{valor + 25 | currency : "BRL"}}</p>
+</div>
+
+<ul>
+    <li>
+        <app-contact></app-contact>
+    </li>
+    <li>
+        <app-about></app-about>
+    </li>
+</ul>
+
+<button (click)="cadastrar()">Cadastre-se</button>
+
+<div *ngIf="isLogged">
+    <label for="">Email</label>
+    <input type="email">
+    <label for="">Password</label>
+    <input type="password" name="password" id="">
+</div>
+
+<div>
+    <label for="">Número 1: </label>
+    <input type="number" #num1>
+    <label for="">Número 2: </label>
+    <input type="number" #num2>
+</div>
+<div>
+    <button (click)="somar()">Somar</button>
+    <div *ngIf="soma !== null">
+        <p><strong>Seu saldo agora é: </strong>{{soma | currency : "BRL"}}</p>
+    </div>
+    <button (click)="subtrair()">Subtrair</button>
+    <div *ngIf="subtracao !== null">
+        <p><strong>Seu saldo agora é: </strong>{{subtracao | currency : "BRL"}}</p>
+    </div>
+    <button (click)="multiplicar()">Multiplicar</button>
+    <div *ngIf="multiplicacao !== null">
+        <p><strong>Seu saldo agora é: </strong>{{multiplicacao | currency : "BRL"}}</p>
+    </div>
+    <button (click)="dividir()">Dividir</button>
+    <div *ngIf="divisao !== null">
+        <p><strong>Seu saldo agora é: </strong>{{divisao | currency : "BRL"}}</p>
+    </div>
+</div>
+
+<div>
+    <ul>
+        <li *ngFor="let item of frutas; let i = index">{{i+1+"ª fruta"}} : {{item}}</li>
+    </ul>
+</div>
+
+<h2>Lista de produtos:</h2>
+<ul *ngIf="produtos.length>=1">
+    <li *ngFor="let produto of produtos; let i = index">{{i+1+"º produto:"}} {{produto.nome}} - {{produto.preco | currency : "BRL"}}</li>
+</ul>
+<p *ngIf="produtos.length < 1">Nenhum produto disponível.</p>
+
+<button (click)="dancaDaManivela()">Dança da manivela</button>
+<div *ngIf="DeusCriouOHomemOHomemCriouNeroENeroCriouADancaDaManivela">
+    <button (click)="perguntarPraElaMeuAmor()">Perguntar se ela topou</button>
+    <div *ngIf="aDancaDaManivelaElaTopou">
+        <button (click)="descerDevagarinho()">Descer devagarinho</button>
+        <!-- <ul *ngIf="desceuDevagarinho">
+            <li *ngFor="let temperatura of temperaturas; let i = index">{{"Aqui tá "}} {{temperatura}}</li>
+        </ul> -->
+        <div *ngIf="desceuDevagarinho">
+            <p [ngClass]="desceuDevagarinho">Aqui tá {{desceuDevagarinho}}</p>
+        </div>
+    </div>
+</div>
+
+<div>
+    <button (click)="tentarAcesso()">Acessar</button>
+    <p *ngIf="statusAcessoAtual === 'permitido'; else negado">Acesso permitido.</p>
+    <ng-template #negado>
+        <p>Acesso negado.</p>
+    </ng-template>
+</div>
+
+<p>{{testePipeReverse | reverse}}</p>
+<p>{{testePipeReverse}}</p>
+
+
+<!-- Serviços: -->
+ <button (click)="sendMessage()">Enviar mensagem</button>
+ <div *ngFor="let msg of messageService.messages">{{msg}}</div>
+
+
+
+
