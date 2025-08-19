@@ -1,5 +1,6 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { MessageService } from '../../services/message-service.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 interface Produto {
   nome: string;
@@ -13,7 +14,7 @@ interface Produto {
   styleUrl: './home.component.css'
 })
 
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   title = "Hello, app-aula-1!";
   valor = 10.50;
   currentDay = new Date();
@@ -82,10 +83,10 @@ export class HomeComponent {
   // --------------------------------------------------------------------------------------------------------------
   testePipeReverse = "Angular"
   // --------------------------------------------------------------------------------------------------------------
-  constructor(public messageService: MessageService) {}
-  sendMessage() {
-    this.messageService.add('Nova mensagem em ' + new Date());
-  }
+  // constructor(public messageService: MessageService) {}
+  // sendMessage() {
+  //   this.messageService.add('Nova mensagem em ' + new Date());
+  // }
   // --------------------------------------------------------------------------------------------------------------
   adicionarAoCarrinho(mensagem: string) {
     console.log(mensagem);
@@ -97,6 +98,15 @@ export class HomeComponent {
   receberApresentacao(mensagem: string) {
     console.log(mensagem);
     alert(mensagem);
+  }
+  // --------------------------------------------------------------------------------------------------------------
+  constructor(private router: Router, private route: ActivatedRoute) {}
+  ngOnInit(): void {
+    // throw new Error('Method not implemented.');
+    // console.log("Hello from home!")
+  }
+  redirecionarParaProduto(produto: number) {
+    this.router.navigate(['/produto', produto])
   }
 }
 

@@ -16,6 +16,11 @@ import { PaiComponent } from './components/pai/pai.component';
 import { FilhoComponent } from './components/filho/filho.component';
 import { ProdutoComponent } from './components/produto/produto.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
+import { ProdutoDetalheComponent } from './components/produto-detalhe/produto-detalhe.component';
+import { PaginanaoencontradaComponent } from './components/paginanaoencontrada/paginanaoencontrada.component';
+import { LoginComponent } from './components/login/login.component';
+import { ListaUsuariosComponent } from './components/lista-usuarios/lista-usuarios.component';
+import { UsuarioDetalhesComponent } from './components/usuario-detalhes/usuario-detalhes.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +34,17 @@ import { PerfilComponent } from './components/perfil/perfil.component';
     FilhoComponent,
     ProdutoComponent,
     PerfilComponent,
+    PaginanaoencontradaComponent,
+    LoginComponent,
+    ListaUsuariosComponent,
+    UsuarioDetalhesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReversePipe,
+    ProdutoDetalheComponent,
     HttpClientModule,
     MatTableModule
 ],
