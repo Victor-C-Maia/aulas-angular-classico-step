@@ -12,6 +12,10 @@ import { ReversePipe } from "./pipes/reverse-pipe";
 import { HttpClientModule } from '@angular/common/http';
 import { UsersComponent } from './components/users/users.component';
 import { MatTableModule } from '@angular/material/table';
+import { PaiComponent } from './components/pai/pai.component';
+import { FilhoComponent } from './components/filho/filho.component';
+import { ProdutoComponent } from './components/produto/produto.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +25,10 @@ import { MatTableModule } from '@angular/material/table';
     AboutComponent,
     UsersComponent,
     TableComponent,
+    PaiComponent,
+    FilhoComponent,
+    ProdutoComponent,
+    PerfilComponent,
   ],
   imports: [
     BrowserModule,

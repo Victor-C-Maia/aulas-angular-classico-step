@@ -102,6 +102,19 @@
 
  <app-table></app-table>
 
+ <app-pai></app-pai>
+
+ <app-produto 
+ [preco]="199.99" 
+ [descricao]="'Teclado Mecânico'" 
+ (adicionar)="adicionarAoCarrinho($event)">
+</app-produto>
+
+<app-perfil 
+  [usuario]="usuario" 
+  (apresentacao)="receberApresentacao($event)">
+</app-perfil>
+
 
 
 

@@ -86,5 +86,17 @@ export class HomeComponent {
   sendMessage() {
     this.messageService.add('Nova mensagem em ' + new Date());
   }
+  // --------------------------------------------------------------------------------------------------------------
+  adicionarAoCarrinho(mensagem: string) {
+    console.log(mensagem);
+    alert(mensagem);
+  }
+  // --------------------------------------------------------------------------------------------------------------
+  usuario = { nome: 'Joana', idade: 30 };
+
+  receberApresentacao(mensagem: string) {
+    console.log(mensagem);
+    alert(mensagem);
+  }
 }
 
