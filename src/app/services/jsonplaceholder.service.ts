@@ -10,10 +10,10 @@ export class JsonplaceholderService {
 
   private apiUrl = 'https://jsonplaceholder.typicode.com/users'
 
-  // getUsers(): Observable<any[]> {
-  //   return this.http.get<any[]>(this.apiUrl)
-  // }
-  getUsers() {
-    return this.http.get(this.apiUrl)
+  getUsers(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl)
   }
+  // getUsers() {
+  //   return this.http.get(this.apiUrl)
+  // }
 }
