@@ -1,0 +1,12 @@
+<button (click)="buscarUsuarios()">Buscar usuários</button>
+
+<ul>
+    <li *ngFor="let user of users">
+        Nome: {{user.name}} <br>
+        Altura: {{user.height}} <br>
+        Filmes:
+        <ul>
+            <li *ngFor="let film of user.filmTitles">{{film}}</li>
+        </ul>
+    </li>
+</ul>
