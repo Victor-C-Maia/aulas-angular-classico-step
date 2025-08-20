@@ -1,0 +1,4 @@
+label { display: block; margin-top: 10px; }
+input[type="text"], input[type="number"] { width: 300px; padding: 5px; margin-bottom: 5px; }
+.erro small { color: red; display: block; }
+button { margin-top: 15px; padding: 8px 15px; }

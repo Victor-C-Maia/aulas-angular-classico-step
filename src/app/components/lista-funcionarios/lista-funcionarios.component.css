@@ -1,0 +1,4 @@
+ul { list-style: none; padding-left: 0; }
+li { margin-bottom: 5px; }
+a { text-decoration: none; color: darkblue; cursor: pointer; }
+a:hover { text-decoration: underline; }

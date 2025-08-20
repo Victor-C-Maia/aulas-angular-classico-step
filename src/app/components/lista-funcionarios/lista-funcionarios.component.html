@@ -1,0 +1,8 @@
+<h2>Lista de Funcionários</h2>
+<ul>
+  <li *ngFor="let funcionario of funcionarios; let i = index">
+    <a (click)="verDetalhes(i)">{{ funcionario.nomeCompleto }}</a>
+  </li>
+</ul>
+
+<p *ngIf="funcionarios.length === 0">Nenhum funcionário cadastrado.</p>

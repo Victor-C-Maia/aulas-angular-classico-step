@@ -1,0 +1,11 @@
+<h2>Detalhes do Funcionário</h2>
+
+<p *ngIf="funcionario">
+  <strong>Nome:</strong> {{ funcionario.nomeCompleto }} <br>
+  <strong>Cargo:</strong> {{ funcionario.cargo }} <br>
+  <strong>Salário:</strong> {{ funcionario.salario }} <br>
+  <strong>Dependentes:</strong> {{ funcionario.numeroDependentes }} <br>
+  <strong>VT:</strong> {{ funcionario.opcaoVT ? 'Sim' : 'Não' }}
+</p>
+
+<p *ngIf="!funcionario">Funcionário não encontrado.</p>

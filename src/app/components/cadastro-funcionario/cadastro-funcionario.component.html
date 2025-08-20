@@ -1,0 +1,39 @@
+<h2>Cadastro de Funcionário</h2>
+<form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+
+  <label>Nome Completo:</label>
+  <input type="text" formControlName="nomeCompleto">
+  <div *ngIf="f['nomeCompleto'].touched && f['nomeCompleto'].invalid" class="erro">
+    <small *ngIf="f['nomeCompleto'].errors?.['required']">Nome é obrigatório.</small>
+    <small *ngIf="f['nomeCompleto'].errors?.['minlength']">Mínimo 10 caracteres.</small>
+  </div>
+
+  <label>Salário:</label>
+  <input type="number" formControlName="salario">
+  <div *ngIf="f['salario'].touched && f['salario'].invalid" class="erro">
+    <small *ngIf="f['salario'].errors?.['required']">Salário é obrigatório.</small>
+    <small *ngIf="f['salario'].errors?.['min']">Salário deve ser ≥ 1518.</small>
+  </div>
+
+  <label>Cargo:</label>
+  <input type="text" formControlName="cargo">
+  <div *ngIf="f['cargo'].touched && f['cargo'].invalid" class="erro">
+    <small>Cargo é obrigatório.</small>
+  </div>
+
+  <label>Número de Dependentes:</label>
+  <input type="number" formControlName="numeroDependentes">
+  <div *ngIf="f['numeroDependentes'].touched && f['numeroDependentes'].invalid" class="erro">
+    <small *ngIf="f['numeroDependentes'].errors?.['required']">Campo obrigatório.</small>
+    <small *ngIf="f['numeroDependentes'].errors?.['max']">Máximo 4 dependentes.</small>
+  </div>
+
+  <label>VT:</label>
+  <label><input type="radio" formControlName="opcaoVT" [value]="true"> Sim</label>
+  <label><input type="radio" formControlName="opcaoVT" [value]="false"> Não</label>
+  <div *ngIf="f['opcaoVT'].touched && f['opcaoVT'].invalid" class="erro">
+    <small>VT é obrigatório.</small>
+  </div>
+
+  <button type="submit">Cadastrar</button>
+</form>
