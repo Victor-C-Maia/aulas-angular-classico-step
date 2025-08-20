@@ -2,7 +2,7 @@
 <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
 
   <label>Nome Completo:</label>
-  <input type="text" formControlName="nomeCompleto">
+  <input type="text" formControlName="nomeCompleto" #nomeInput>
   <div *ngIf="f['nomeCompleto'].touched && f['nomeCompleto'].invalid" class="erro">
     <small *ngIf="f['nomeCompleto'].errors?.['required']">Nome é obrigatório.</small>
     <small *ngIf="f['nomeCompleto'].errors?.['minlength']">Mínimo 10 caracteres.</small>

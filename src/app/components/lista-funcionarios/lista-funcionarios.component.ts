@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { FuncionarioService, Funcionario } from '../../services/funcionario.service';
@@ -10,13 +10,20 @@ import { FuncionarioService, Funcionario } from '../../services/funcionario.serv
   templateUrl: './lista-funcionarios.component.html',
   styleUrls: ['./lista-funcionarios.component.css']
 })
-export class ListaFuncionariosComponent implements OnInit {
+export class ListaFuncionariosComponent implements OnInit, DoCheck {
   funcionarios: Funcionario[] = [];
 
-  constructor(private funcionarioService: FuncionarioService, private router: Router) {}
+  constructor(private funcionarioService: FuncionarioService, private router: Router) {
+    console.log('Constructor: ListaFuncionariosComponent instanciado');
+  }
 
   ngOnInit(): void {
+    console.log('ngOnInit: carregando lista de funcionários');
     this.funcionarioService.getFuncionarios().subscribe(data => this.funcionarios = data);
+  }
+
+  ngDoCheck(): void {
+    console.log('ngDoCheck: ListaFuncionariosComponent detectando mudanças');
   }
 
   verDetalhes(index: number) {
